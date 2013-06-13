@@ -21,6 +21,7 @@
 				el.css('position') != 'relative'
 				)
 				el.css('position','relative');
+			el.css('overflow','hidden');
 
 			if(_self.options.vertical)
 			{
