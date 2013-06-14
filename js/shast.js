@@ -6,7 +6,9 @@
 			// These are the defaults.
 			scale: 1.2,
 			vertical: false,
-			slices: 3
+			slices: 3,
+			speed: 500,
+			easing: 'swing'
 		}, _options );
 
 		var _self = this;
@@ -82,22 +84,22 @@
 				if(_self.options.vertical)
 					Childs.animate({
 						marginTop: AnimTo + 'px'
-					});
+					},_self.options.speed,_self.options.easing);
 				else
 					Childs.animate({
 						marginLeft: AnimTo + 'px'
-					});
+					},_self.options.speed,_self.options.easing);
 			},function(){
 				var Childs = $(this).children('div');
 				Childs.stop().each(function(){
 					if(_self.options.vertical)
 						$(this).animate({
 							marginTop: $(this).attr('data-diff')
-						});
+						},_self.options.speed,_self.options.easing);
 					else
 						$(this).animate({
 							marginLeft: $(this).attr('data-diff')
-						});
+						},_self.options.speed,_self.options.easing);
 				});
 			});
 
